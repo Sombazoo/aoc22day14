@@ -1,5 +1,9 @@
 # the problem can be found here: https://adventofcode.com/2022/day/14
+from enum import Enum
+
 Coordinate = tuple[int, int]
+Material = Enum('Material', 'rock solid_sand falling_sand')
+Object = tuple[Material, Coordinate]
 
 
 def print_header():
@@ -10,26 +14,27 @@ def print_header():
     print("=" * len(header))
 
 
-def extract_coordinates(s: str):
+def extract_objects(s: str):
     """convert a string sturcture into list of coordinates"""
-    cords_list = list()
+    object_list = list()
 
     # split structure
     coords = s.split(' -> ')
     for c in coords:
         x, y = c.split(',')
         try:
-            cords_list.append(Coordinate((int(x), int(y))))
+            o = Object((Material.rock, Coordinate((int(x), int(y)))))
+            object_list.append(o)
         except ValueError:
             print("""Error:\tCould not extract coordinates!
 \tPlease check the input file!""")
             return []
 
-    return cords_list
+    return object_list
 
 
-def min_max_coords(shape_list):
-    """extracts ((min_x, max_x), (min_y, max_y)) from shape_list"""
+def min_max_coords(coord_list):
+    """extracts ((min_x, max_x), (min_y, max_y)) from list of coordinates"""
     # Initialize lists to store extracted x and y coordinates
     x_coords = []
     y_coords = []
@@ -39,7 +44,7 @@ def min_max_coords(shape_list):
     max_y_list = []
 
     # Iterate over each inner list of coordinates
-    for coords in shape_list:
+    for coords in coord_list:
         # Extract the first and second parts of each coordinate tuple
         x_coords = [coord[0] for coord in coords]
         y_coords = [coord[1] for coord in coords]
@@ -67,8 +72,9 @@ def load_structure():
     with open("input.txt", 'r') as file:
         shapes = file.readlines()
         for shape in shapes:
-            shape_list.append(extract_coordinates(shape))
-    print(min_max_coords(shape_list))
+            shape_list.append(extract_objects(shape))
+    coord_list = [[s[1] for s in list] for list in shape_list]
+    print(min_max_coords(coord_list))
 
 
 def main():
