@@ -10,7 +10,7 @@ def print_header():
     print("=" * len(header))
 
 
-def main():
+def main(example: bool = False):
     grid = Grid()
 
     print_header()

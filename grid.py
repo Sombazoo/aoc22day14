@@ -14,8 +14,8 @@ class Grid:
     __min_y = 0
     __max_y = 0
 
-    def __init__(self):
-        self.load_grid()
+    def __init__(self, example: bool = False):
+        self.load_grid(example)
 
     def add(self, object: Object):
         self.__grid[object[1][0] - self.__min_x + 1][object[1][1]] = object[0]
@@ -105,10 +105,13 @@ class Grid:
 
         self.__grid = grid
 
-    def load_grid(self):
+    def load_grid(self, example: bool):
         """loads the structures from the input file"""
+        file_location = "input.txt"
+        if example:
+            file_location = "example.txt"
         shape_list = list()
-        with open("input.txt", 'r') as file:
+        with open(file_location, 'r') as file:
             shapes = file.readlines()
             for shape in shapes:
                 shape_list.append(self.extract_objects(shape))
