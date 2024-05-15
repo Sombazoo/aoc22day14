@@ -3,20 +3,21 @@ Coordinate = tuple[int, int]
 
 
 def print_header():
+    """prints the header for the terminal output"""
     header = "====== Advent of Code 2022 - Day 14 ======"
     print("=" * len(header))
     print(header)
     print("=" * len(header))
 
 
-# convert a string sturcture into list of coordinates
 def extract_coordinates(s: str):
+    """convert a string sturcture into list of coordinates"""
     cords_list = list()
 
     # split structure
     coords = s.split(' -> ')
     for c in coords:
-        (x, y) = c.split(',')
+        x, y = c.split(',')
         try:
             cords_list.append(Coordinate((int(x), int(y))))
         except ValueError:
@@ -27,8 +28,8 @@ def extract_coordinates(s: str):
     return cords_list
 
 
-# extracts ((min_x, max_x), (min_y, max_y)) from shape_list
 def min_max_coords(shape_list):
+    """extracts ((min_x, max_x), (min_y, max_y)) from shape_list"""
     # Initialize lists to store extracted x and y coordinates
     x_coords = []
     y_coords = []
@@ -60,8 +61,8 @@ def min_max_coords(shape_list):
     return ((min_x, max_x), (min_y, max_y))
 
 
-# loads the structures from the input file
 def load_structure():
+    """loads the structures from the input file"""
     shape_list = list()
     with open("input.txt", 'r') as file:
         shapes = file.readlines()
