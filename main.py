@@ -1,5 +1,5 @@
 # the problem can be found here: https://adventofcode.com/2022/day/14
-import Grid
+from grid import Grid
 
 
 def print_header():
@@ -11,9 +11,10 @@ def print_header():
 
 
 def main(example: bool = False):
-    grid = Grid()
-
     print_header()
+
+    grid = Grid(example)
+
     # todo solve part 1
     # todo solve part 2
 

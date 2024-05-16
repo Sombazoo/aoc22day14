@@ -18,12 +18,33 @@ class Grid:
         self.load_grid(example)
 
     def add(self, object: Object):
-        self.__grid[object[1][0] - self.__min_x + 1][object[1][1]] = object[0]
+        try:
+            x = object[1][0] - self.__min_x + 1
+            self.__grid[x][object[1][1]] = object[0]
+        except ValueError:
+            print("""Failed to insert object:""" + str(object))
+        except IndexError:
+            print("""Failed to insert object: (IndexError) """ + str(object))
 
     def remove(self, coord: Coordinate):
-        self.__grid[coord[0] - self.__min_x + 1][coord[1]] = Material.air
+        try:
+            self.__grid[coord[0] - self.__min_x + 1][coord[1]] = Material.air
+        except ValueError:
+            print("""Failed to remove from coordinates:""" + str(coord))
+        except IndexError:
+            print("""Failed to remove from coordinates: (IndexError) """
+                  + str(object))
 
-    def extract_objects(s: str):
+    def at(self, coord: Coordinate):
+        try:
+            self.__grid[coord[0] - self.__min_x + 1][coord[1]] = Material.air
+        except ValueError:
+            print("""Failed to get from coordinates:""" + str(coord))
+        except IndexError:
+            print("""Failed to get at coordinates: (IndexError) """
+                  + str(coord))
+
+    def extract_objects(self, s: str):
         """convert a string sturcture into list of coordinates"""
         object_list = list()
 
@@ -78,10 +99,12 @@ class Grid:
         height = self.__max_y + 2
 
         # create the structur array
-        grid = [[0 for x in range(width)] for y in range(height)]
+        self.__grid = [
+                [Material.air for x in range(height)] for y in range(width)
+                ]
 
         try:
-            grid[500][0] = Material.source
+            self.add(Object((Material.source, Coordinate((500, 0)))))
 
             # fill the grid with the rock positions
             for structure_coord_list in coord_list:
@@ -92,18 +115,17 @@ class Grid:
                             for i in range(
                                     min(c[0], prev[0]),
                                     max(c[0], prev[0]) + 1):
-                                grid[i][c[1]] = Material.rock
+                                self.add(Object((
+                                    Material.rock, Coordinate((i, c[1])))))
                         elif c[1] - prev[1]:
                             for i in range(
                                     min(c[1], prev[1]),
                                     max(c[1], prev[1]) + 1):
-                                grid[i][c[0]] = Material.rock
-                            pass
+                                self.add(Object((
+                                    Material.rock, Coordinate((c[0], i)))))
                     prev = c
         except ValueError:
             print("Error: failed to generate grid! Check the input")
-
-        self.__grid = grid
 
     def load_grid(self, example: bool):
         """loads the structures from the input file"""
@@ -118,5 +140,3 @@ class Grid:
         coord_list = [[s[1] for s in list] for list in shape_list]
 
         self.generate_grid(coord_list)
-
-        self.add(Object((Material.source, Coordinate((500, 0)))))
