@@ -18,6 +18,9 @@ class Grid:
         self.load_grid(example)
 
     def add(self, object: Object):
+        """
+        adds a object to the grid
+        """
         try:
             x = object[1][0] - self.__min_x + 1
             self.__grid[x][object[1][1]] = object[0]
@@ -27,6 +30,9 @@ class Grid:
             print("""Failed to insert object: (IndexError) """ + str(object))
 
     def remove(self, coord: Coordinate):
+        """
+        removes an object from the grid
+        """
         try:
             self.__grid[coord[0] - self.__min_x + 1][coord[1]] = Material.air
         except ValueError:
@@ -35,7 +41,24 @@ class Grid:
             print("""Failed to remove from coordinates: (IndexError) """
                   + str(object))
 
-    def is_empty_at(self, coord: Coordinate):
+    def is_inside(self, coord: Coordinate):
+        """
+        checks if a coordinate is inside the defined grid
+        """
+        inside_x = self.__min_x <= coord[0] <= self.__max_x
+        inside_y = 0 <= coord[1] <= self.__max_y
+
+        return inside_x and inside_y
+
+    def is_air_at(self, coord: Coordinate):
+        """
+        Check if the grid is air at a given Coordinate.
+        Outside the defined grid is air
+        """
+        # check if coord is outside grid
+        if not self.is_inside(coord):
+            return True
+
         try:
             return self.__grid[coord[0] - self.__min_x + 1][coord[1]] == Material.air
         except ValueError:
@@ -60,10 +83,10 @@ class Grid:
                   + str(coord))
 
     def get_last_row(self):
-        if len(self.__grid) != 0:
-            return len(self.__grid[0])
-        else:
-            return 0
+        """
+        returns the lowest row value of the grid
+        """
+        return self.__max_y
 
     def extract_objects(self, s: str):
         """convert a string sturcture into list of coordinates"""
@@ -114,6 +137,9 @@ class Grid:
         self.__max_y = max(max_y_list, default=self.__min_y)
 
     def generate_grid(self, coord_list):
+        """
+        tries to generate a grid from a given list of coordinates
+        """
         # compute the size of the structure
         self.calc_min_max_coords(coord_list)
         width = self.__max_x - self.__min_x + 2
