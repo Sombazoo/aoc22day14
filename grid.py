@@ -35,6 +35,21 @@ class Grid:
             print("""Failed to remove from coordinates: (IndexError) """
                   + str(object))
 
+    def is_empty_at(self, coord: Coordinate):
+        try:
+            return self.__grid[coord[0] - self.__min_x + 1][coord[1]] == Material.air
+        except ValueError:
+            print("""Failed to check at coordinates:""" + str(coord))
+        except IndexError:
+            print("""Failed to check at coordinates: (IndexError) """
+                  + str(coord))
+            print(self.__min_x)
+            print(self.__min_y)
+            print(self.__max_x)
+            print(self.__max_y)
+            print(coord[0] - self.__min_x + 1)
+            print(coord[1])
+
     def at(self, coord: Coordinate):
         try:
             self.__grid[coord[0] - self.__min_x + 1][coord[1]] = Material.air
@@ -43,6 +58,12 @@ class Grid:
         except IndexError:
             print("""Failed to get at coordinates: (IndexError) """
                   + str(coord))
+
+    def get_last_row(self):
+        if len(self.__grid) != 0:
+            return len(self.__grid[0])
+        else:
+            return 0
 
     def extract_objects(self, s: str):
         """convert a string sturcture into list of coordinates"""
