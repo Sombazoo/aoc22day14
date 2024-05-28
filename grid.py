@@ -1,4 +1,6 @@
 from enum import Enum
+import math
+import time
 
 Coordinate = tuple[int, int]
 Material = Enum('Material', 'air rock source solid_sand falling_sand')
@@ -13,6 +15,7 @@ class Grid:
     __max_x = 0
     __min_y = 0
     __max_y = 0
+    __offset = 0
 
     def __init__(self, example: bool = False):
         self.load_grid(example)
@@ -22,7 +25,7 @@ class Grid:
         adds a object to the grid
         """
         try:
-            x = object[1][0] - self.__min_x + 1
+            x = object[1][0] - self.__offset
             self.__grid[x][object[1][1]] = object[0]
         except ValueError:
             print("""Failed to insert object:""" + str(object))
@@ -34,7 +37,7 @@ class Grid:
         removes an object from the grid
         """
         try:
-            self.__grid[coord[0] - self.__min_x + 1][coord[1]] = Material.air
+            self.__grid[coord[0] - self.__offset][coord[1]] = Material.air
         except ValueError:
             print("""Failed to remove from coordinates:""" + str(coord))
         except IndexError:
@@ -45,8 +48,8 @@ class Grid:
         """
         checks if a coordinate is inside the defined grid
         """
-        inside_x = self.__min_x <= coord[0] <= self.__max_x
-        inside_y = 0 <= coord[1] <= self.__max_y
+        inside_x = self.__offset <= coord[0] <= (self.__offset + len(self.__grid))
+        inside_y = 0 <= coord[1] <= self.__max_y + 2
 
         return inside_x and inside_y
 
@@ -60,7 +63,7 @@ class Grid:
             return True
 
         try:
-            return self.__grid[coord[0] - self.__min_x + 1][coord[1]] == Material.air
+            return self.__grid[coord[0] - self.__offset][coord[1]] == Material.air
         except ValueError:
             print("""Failed to check at coordinates:""" + str(coord))
         except IndexError:
@@ -75,7 +78,7 @@ class Grid:
 
     def at(self, coord: Coordinate):
         try:
-            self.__grid[coord[0] - self.__min_x + 1][coord[1]] = Material.air
+            self.__grid[coord[0] - self.__offset][coord[1]] = Material.air
         except ValueError:
             print("""Failed to get from coordinates:""" + str(coord))
         except IndexError:
@@ -142,8 +145,15 @@ class Grid:
         """
         # compute the size of the structure
         self.calc_min_max_coords(coord_list)
-        width = self.__max_x - self.__min_x + 2
         height = self.__max_y + 2
+        normal_width = self.__max_x - self.__min_x + 2
+        height_width = height * 2 - 1
+        if normal_width >= height_width:
+            width = normal_width
+            self.__offset = self.__min_x + 1
+        else:
+            width = height_width
+            self.__offset = 500 - math.floor(0.5 * width)
 
         # create the structur array
         self.__grid = [
@@ -189,11 +199,14 @@ class Grid:
         self.generate_grid(coord_list)
 
     def print_grid(self):
+        if len(self.__grid) == 0:
+            return
+
         print()
         # todo print numbers
-        for i in range(len(self.__grid)):
+        for i in range(len(self.__grid[0])):
             row = str(i) + "\t"
-            for j in range(len(self.__grid[i])):
+            for j in range(len(self.__grid)):
                 match self.__grid[j][i]:
                     case Material.air:
                         row += " "
@@ -209,3 +222,4 @@ class Grid:
                         row += "?"
             print(row)
         print()
+        time.sleep(0.05)
