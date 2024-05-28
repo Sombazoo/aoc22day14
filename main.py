@@ -16,6 +16,7 @@ def main():
     parser = argparse.ArgumentParser(description='Advent of Code 2022 day 14.')
     parser.add_argument('-v', '--verbose', action='store_true', help='Enable verbose mode')
     parser.add_argument('-e', '--example', action='store_true', help='Enable example mode')
+    parser.add_argument('-t', '--time', type=float, help='Set verbose render speed')
 
     args = parser.parse_args()
 
@@ -24,8 +25,8 @@ def main():
     grid1 = Grid(args.example)
     grid2 = Grid(args.example)
 
-    engine1 = Engine(grid1, args.verbose)
-    engine2 = Engine(grid2, args.verbose)
+    engine1 = Engine(grid1, args.time, args.verbose)
+    engine2 = Engine(grid2, args.time, args.verbose)
 
     # todo solve part 1
     part1 = engine1.spawn()

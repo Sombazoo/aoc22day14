@@ -198,7 +198,7 @@ class Grid:
 
         self.generate_grid(coord_list)
 
-    def print_grid(self):
+    def print_grid(self, render_speed: float):
         if len(self.__grid) == 0:
             return
 
@@ -222,4 +222,7 @@ class Grid:
                         row += "?"
             print(row)
         print()
-        time.sleep(0.05)
+        if render_speed is not None:
+            time.sleep(render_speed)
+        else:
+            time.sleep(0.1)

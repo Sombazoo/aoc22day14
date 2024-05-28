@@ -4,9 +4,10 @@ from grid import Grid, Coordinate, Material, Object
 class Engine:
     """The engine that simulates the falling sand"""
 
-    def __init__(self, grid: Grid, verbose: bool = False):
+    def __init__(self, grid: Grid, render_speed: float, verbose: bool = False):
         self.grid = grid
         self.verbose = verbose
+        self.render_speed = render_speed
 
     def spawn(self, part2: bool = False):
         """
@@ -33,7 +34,7 @@ class Engine:
                     # can't fall => becomes stationary sand
                     self.grid.add(Object((Material.solid_sand, Coordinate(sand))))
                     if self.verbose:
-                        self.grid.print_grid()
+                        self.grid.print_grid(self.render_speed)
                     break
                 if sand[1] >= self.grid.get_last_row() + 1:
                     # check if the sand fell too far
@@ -41,7 +42,7 @@ class Engine:
                         return num
                     self.grid.add(Object((Material.solid_sand, Coordinate(sand))))
                     if self.verbose:
-                        self.grid.print_grid()
+                        self.grid.print_grid(self.render_speed)
                     break
             num += 1
             if sand == (500, 0):
