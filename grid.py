@@ -187,3 +187,25 @@ class Grid:
         coord_list = [[s[1] for s in list] for list in shape_list]
 
         self.generate_grid(coord_list)
+
+    def print_grid(self):
+        print()
+        # todo print numbers
+        for i in range(len(self.__grid)):
+            row = str(i) + "\t"
+            for j in range(len(self.__grid[i])):
+                match self.__grid[j][i]:
+                    case Material.air:
+                        row += " "
+                    case Material.rock:
+                        row += "#"
+                    case Material.source:
+                        row += "+"
+                    case Material.falling_sand:
+                        row += "~"
+                    case Material.solid_sand:
+                        row += "o"
+                    case _:
+                        row += "?"
+            print(row)
+        print()

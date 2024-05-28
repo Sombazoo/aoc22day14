@@ -31,12 +31,14 @@ class Engine:
                 else:
                     # can't fall => becomes stationary sand
                     self.grid.add(Object((Material.solid_sand, Coordinate(sand))))
+                    self.grid.print_grid()
                     break
                 if sand[1] >= self.grid.get_last_row() + 1:
                     # check if the sand fell too far
                     if not part2:
                         return num
                     self.grid.add(Object((Material.solid_sand, Coordinate(sand))))
+                    self.grid.print_grid()
                     break
             num += 1
             if sand == (500, 0):
