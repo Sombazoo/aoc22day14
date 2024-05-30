@@ -25,6 +25,10 @@ It is also possible to set the following flags:
   - Description: Enable example mode.
   - Usage: Activates the example mode, which will select the example input instead of the main input for the rock structure.
 
+- -i, --interrupt
+  - Description: Enable interrupt mode.
+  - Usage: Activates the interrupt mode, which will interrupt the programm before executing the simulations.
+
 - -t, --time
   - Description: Set verbose render speed in seconds.
   - Type: float

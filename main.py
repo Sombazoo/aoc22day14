@@ -16,6 +16,7 @@ def main():
     parser = argparse.ArgumentParser(description='Advent of Code 2022 day 14.')
     parser.add_argument('-v', '--verbose', action='store_true', help='Enable verbose mode')
     parser.add_argument('-e', '--example', action='store_true', help='Enable example mode')
+    parser.add_argument('-i', '--interrupt', action='store_true', help='Enable interrupt mode')
     parser.add_argument('-t', '--time', type=float, help='Set verbose render speed')
 
     args = parser.parse_args()
@@ -30,10 +31,15 @@ def main():
 
     # todo solve part 1
     part1 = engine1.spawn()
+    if args.interrupt:
+        input("Press Enter to start part 1...")
     print(f"Part 1: {part1}")
 
     # todo solve part 2
     part2 = engine2.spawn(part2=True)
+    if args.interrupt:
+        print("==========================================")
+        input("Press Enter to start part 2...")
     print(f"Part 2: {part2}")
 
 
