@@ -1,0 +1,24 @@
+\frametitle{Code Example}
+\begin{minted}[bgcolor=codebg, linenos, fontsize=\scriptsize]{python}
+num = 0
+while True:
+    sand = (500, 0)
+    while True:
+        if self.grid.is_air_at(Coordinate((sand[0], sand[1] + 1))):
+            sand = (sand[0], sand[1] + 1)
+        elif self.grid.is_air_at(Coordinate((sand[0] - 1, sand[1] + 1))):
+            sand = (sand[0] - 1, sand[1] + 1)
+        elif self.grid.is_air_at(Coordinate((sand[0] + 1, sand[1] + 1))):
+            sand = (sand[0] + 1, sand[1] + 1)
+        else:
+            self.grid.add(Object((Material.solid_sand, Coordinate(sand))))
+            break
+        if sand[1] >= self.grid.get_last_row() + 1:
+            if not part2:
+                return num
+            self.grid.add(Object((Material.solid_sand, Coordinate(sand))))
+            break
+    num += 1
+    if sand == (500, 0):
+        return num
+    \end{minted}
