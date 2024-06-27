@@ -1,22 +1,34 @@
 \documentclass{beamer}
 
 % Theme choices
-\usetheme{Madrid}
-\usecolortheme{dolphin}
-\usefonttheme{professionalfonts}
+\usetheme{SimplePlusAIC}
+% \usecolortheme{dolphin}
+% \usefonttheme{professionalfonts}
 
 \usepackage{svg}
 \usepackage{minted}
 \usepackage{xcolor}
 \usepackage{adjustbox}
+\usepackage{fontspec}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tikz}
+\usepackage{makecell}
+\usepackage{wrapfig}
 
 
 % Define colors for code highlighting
 \definecolor{codebg}{rgb}{0.95,0.95,0.95}
+\definecolor{White}{rgb}{1,1,1}
 
 % Minted settings
 % Set the style for syntax highlighting
 \usemintedstyle{friendly}
+
+
+\usetikzlibrary{calc}
+\usetikzlibrary{backgrounds}
 
 
 \newcommand{\motivationTitle}{How much sand is needed to fill the cave and its surroundings?}
@@ -30,14 +42,18 @@
 \subtitle{Selected Fun Problems of the ACM Programming Contest}
 \author{Simon Roller}
 \institute{University of Tübingen}
-\date{\today} % todo-----------------------------------------------------------------------------------------------
+\date{28.06.2024} % todo-----------------------------------------------------------------------------------------------
 
 \begin{document}
 
 % Title page
+\setbeamertemplate{background}{
+    \includegraphics[height=\paperheight]{Images/Cave.png}
+}
 \begin{frame}
     \titlepage
 \end{frame}
+\setbeamertemplate{background}{}
 
 \section{Motivation}
 
