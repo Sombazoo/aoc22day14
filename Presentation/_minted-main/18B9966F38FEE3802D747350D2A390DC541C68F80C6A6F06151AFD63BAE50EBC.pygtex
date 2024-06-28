@@ -1,0 +1,10 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{main}\PYG{p}{():}
+    \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Hello, world!\PYGZdq{}}\PYG{p}{)}
+    \PYG{c+c1}{\PYGZsh{} This is a comment}
+    \PYGZbs{}\PYG{n}{colorbox}\PYG{p}{\PYGZob{}}\PYG{n}{yellow}\PYG{p}{\PYGZcb{}\PYGZob{}}\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Highlighted text\PYGZdq{}}\PYG{p}{)\PYGZcb{}}
+    \PYG{c+c1}{\PYGZsh{} Another comment}
+
+\PYG{k}{if} \PYG{n+nv+vm}{\PYGZus{}\PYGZus{}name\PYGZus{}\PYGZus{}} \PYG{o}{==} \PYG{l+s+s2}{\PYGZdq{}\PYGZus{}\PYGZus{}main\PYGZus{}\PYGZus{}\PYGZdq{}}\PYG{p}{:}
+    \PYG{n}{main}\PYG{p}{()}
+\end{Verbatim}

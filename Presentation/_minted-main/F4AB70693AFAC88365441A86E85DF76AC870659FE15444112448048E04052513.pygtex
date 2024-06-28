@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+ \PYG{n}{Coordinate} \PYG{o}{=} \PYG{n+nb}{tuple}\PYG{p}{[}\PYG{n+nb}{int}\PYG{p}{,} \PYG{n+nb}{int}\PYG{p}{]}
+\PYG{esc}{\highlight{Material = Enum(\^{\prime} Material\^{\prime}, \^{\prime} air rock source solid_sand\^{\prime})}}
+ \PYG{n}{Object} \PYG{o}{=} \PYG{n+nb}{tuple}\PYG{p}{[}\PYG{n}{Material}\PYG{p}{,} \PYG{n}{Coordinate}\PYG{p}{]}
+\end{Verbatim}

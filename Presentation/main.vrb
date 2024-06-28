@@ -1,5 +1,5 @@
 \frametitle{Code Example}
-\begin{minted}[bgcolor=codebg, linenos, fontsize=\scriptsize]{python}
+\begin{minted}[bgcolor=codebg, linenos, fontsize=\tiny]{python}
 num = 0
 while True:
   sand = (500, 0)

@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{num} \PYG{o}{=} \PYG{l+m+mi}{0}
+\PYG{k}{while} \PYG{k+kc}{True}\PYG{p}{:}
+  \PYG{n}{sand} \PYG{o}{=} \PYG{p}{(}\PYG{l+m+mi}{500}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{)}
+  \PYG{k}{while} \PYG{k+kc}{True}\PYG{p}{:}
+\end{Verbatim}

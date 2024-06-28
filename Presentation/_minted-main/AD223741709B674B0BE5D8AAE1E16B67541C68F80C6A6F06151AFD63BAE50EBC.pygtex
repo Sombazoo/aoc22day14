@@ -1,0 +1,8 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{num} \PYG{o}{=} \PYG{l+m+mi}{0}
+\PYG{k}{while} \PYG{k+kc}{True}\PYG{p}{:}
+  \PYG{n}{sand} \PYG{o}{=} \PYG{p}{(}\PYG{l+m+mi}{500}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{)}
+  \PYG{k}{while} \PYG{k+kc}{True}\PYG{p}{:}
+    \PYG{k}{if} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{grid}\PYG{o}{.}\PYG{n}{is\PYGZus{}air\PYGZus{}at}\PYG{p}{(}\PYG{n}{Coordinate}\PYG{p}{((}\PYG{n}{sand}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{],} \PYG{n}{sand}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{))):}
+      \PYG{n}{sand} \PYG{o}{=} \PYG{p}{(}\PYG{n}{sand}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{],} \PYG{n}{sand}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{)}
+\end{Verbatim}

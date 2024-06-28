@@ -1,0 +1,45 @@
+{Coordinate = tuple[int, int]} \hl {Material = Enum('Material', 'air rock source solid_sand')} \colorbox {yellow}{Object = tuple[Material, Coordinate]} \end {mybox} \end {beamer@frameslide}\ifbeamer@twoscreenstext \beamer@dosecondscreennow {{Code Example} \begin {mybox}[listing engine=minted, minted language=python] \hl {Coordinate = tuple[int, int]} \hl {Material = Enum('Material', 'air rock source solid_sand')} \colorbox {yellow}{Object = tuple[Material, Coordinate]} \end {mybox} }\fi \ifbeamer@anotherslide \advance \beamer@slideinframe by 1\relax \relax \expandafter \iterate \fi \let \iterate \relax \beamer@writeslidentry \beamer@reseteecodes 
+
+\begin{frame}[fragile,t]{Code Example}
+    \begin{minted}[bgcolor=codebg, linenos, fontsize=\tiny]{python}
+num = 0
+while True:
+  sand = (500, 0)
+  while True:
+    if self.grid.is_air_at(Coordinate((sand[0], sand[1] + 1))):
+      sand = (sand[0], sand[1] + 1)
+    elif self.grid.is_air_at(Coordinate((sand[0] - 1, sand[1] + 1))):
+      sand = (sand[0] - 1, sand[1] + 1)
+    elif self.grid.is_air_at(Coordinate((sand[0] + 1, sand[1] + 1))):
+      sand = (sand[0] + 1, sand[1] + 1)
+    else:
+      self.grid.add(Object((Material.solid_sand, Coordinate(sand))))
+      break
+    if sand[1] >= self.grid.get_last_row() + 1:
+      if not part2:
+        return num
+      self.grid.add(Object((Material.solid_sand, Coordinate(sand))))
+      break
+  num += 1
+  if sand == (500, 0):
+    return num
+    \end{minted}
+\end{frame}
+
+\section{Live Demo}
+
+\begin{frame}{Live Demo}
+\end{frame}
+
+\section{Key Takeaways \& Outlook}
+
+\begin{frame}{Key Takeaways \& Outlook}
+    \begin{itemize}
+        \only{\item<1-> rock structure is created using the input coordinates}
+        \only{\item<2-> dynamically calculate the number of sand}
+        \only{\item<3-> adjust grid to be optimized for memory or computational performance}
+        \only{\item<4-> render falling sand}
+    \end{itemize}
+\end{frame}
+
+\end{document}

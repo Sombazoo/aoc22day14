@@ -2,8 +2,6 @@
 
 % Theme choices
 \usetheme{SimplePlusAIC}
-% \usecolortheme{dolphin}
-% \usefonttheme{professionalfonts}
 
 \usepackage{svg}
 \usepackage{minted}
@@ -16,6 +14,7 @@
 \usepackage{tikz}
 \usepackage{makecell}
 \usepackage{wrapfig}
+\usepackage{tcolorbox}
 
 
 % Define colors for code highlighting
@@ -32,6 +31,7 @@
 
 
 \newcommand{\motivationTitle}{How much sand is needed to fill the cave and its surroundings?}
+\newcommand{\highlight}[1]{\colorbox{yellow}{#1}}
 
 % ----------------------------------------------------------------------------------------------------------------
 % --- document ---------------------------------------------------------------------------------------------------
@@ -281,6 +281,7 @@
         \end{figure}
     \end{minipage}
 \end{frame}
+
 \section{Solution Approach}
 
 \begin{frame}{Solution Approach}
@@ -293,8 +294,112 @@
 % optionally also show grid generation
 \section{Code Example}
 
-\begin{frame}[fragile]{Code Example}
+\begin{frame}[fragile,t]{Code Example}
     \begin{minted}[bgcolor=codebg, linenos, fontsize=\scriptsize]{python}
+Coordinate = tuple[int, int]
+Material = Enum('Material', 'air rock source solid_sand falling_sand')
+Object = tuple[Material, Coordinate]
+    \end{minted}
+\end{frame}
+
+
+\begin{frame}[fragile,t]{Code Example}
+    \begin{minted}[bgcolor=codebg, linenos, fontsize=\tiny]{python}
+num = 0
+while True:
+  sand = (500, 0)
+  while True:
+    \end{minted}
+\end{frame}
+
+\setcounter{framenumber}{8}
+\begin{frame}[fragile,t]{Code Example}
+    \begin{minted}[bgcolor=codebg, linenos, fontsize=\tiny]{python}
+num = 0
+while True:
+  sand = (500, 0)
+  while True:
+    if self.grid.is_air_at(Coordinate((sand[0], sand[1] + 1))):
+      sand = (sand[0], sand[1] + 1)
+    \end{minted}
+\end{frame}
+
+\setcounter{framenumber}{8}
+\begin{frame}[fragile,t]{Code Example}
+    \begin{minted}[bgcolor=codebg, linenos, fontsize=\tiny]{python}
+num = 0
+while True:
+  sand = (500, 0)
+  while True:
+    if self.grid.is_air_at(Coordinate((sand[0], sand[1] + 1))):
+      sand = (sand[0], sand[1] + 1)
+    elif self.grid.is_air_at(Coordinate((sand[0] - 1, sand[1] + 1))):
+      sand = (sand[0] - 1, sand[1] + 1)
+    \end{minted}
+\end{frame}
+
+\setcounter{framenumber}{8}
+\begin{frame}[fragile,t]{Code Example}
+    \begin{minted}[bgcolor=codebg, linenos, fontsize=\tiny]{python}
+num = 0
+while True:
+  sand = (500, 0)
+  while True:
+    if self.grid.is_air_at(Coordinate((sand[0], sand[1] + 1))):
+      sand = (sand[0], sand[1] + 1)
+    elif self.grid.is_air_at(Coordinate((sand[0] - 1, sand[1] + 1))):
+      sand = (sand[0] - 1, sand[1] + 1)
+    elif self.grid.is_air_at(Coordinate((sand[0] + 1, sand[1] + 1))):
+      sand = (sand[0] + 1, sand[1] + 1)
+    \end{minted}
+\end{frame}
+
+\setcounter{framenumber}{8}
+\begin{frame}[fragile,t]{Code Example}
+    \begin{minted}[bgcolor=codebg, linenos, fontsize=\tiny]{python}
+num = 0
+while True:
+  sand = (500, 0)
+  while True:
+    if self.grid.is_air_at(Coordinate((sand[0], sand[1] + 1))):
+      sand = (sand[0], sand[1] + 1)
+    elif self.grid.is_air_at(Coordinate((sand[0] - 1, sand[1] + 1))):
+      sand = (sand[0] - 1, sand[1] + 1)
+    elif self.grid.is_air_at(Coordinate((sand[0] + 1, sand[1] + 1))):
+      sand = (sand[0] + 1, sand[1] + 1)
+    else:
+      self.grid.add(Object((Material.solid_sand, Coordinate(sand))))
+      break
+    \end{minted}
+\end{frame}
+
+\setcounter{framenumber}{8}
+\begin{frame}[fragile,t]{Code Example}
+    \begin{minted}[bgcolor=codebg, linenos, fontsize=\tiny]{python}
+num = 0
+while True:
+  sand = (500, 0)
+  while True:
+    if self.grid.is_air_at(Coordinate((sand[0], sand[1] + 1))):
+      sand = (sand[0], sand[1] + 1)
+    elif self.grid.is_air_at(Coordinate((sand[0] - 1, sand[1] + 1))):
+      sand = (sand[0] - 1, sand[1] + 1)
+    elif self.grid.is_air_at(Coordinate((sand[0] + 1, sand[1] + 1))):
+      sand = (sand[0] + 1, sand[1] + 1)
+    else:
+      self.grid.add(Object((Material.solid_sand, Coordinate(sand))))
+      break
+    if sand[1] >= self.grid.get_last_row() + 1:
+      if not part2:
+        return num
+      self.grid.add(Object((Material.solid_sand, Coordinate(sand))))
+      break
+    \end{minted}
+\end{frame}
+
+\setcounter{framenumber}{8}
+\begin{frame}[fragile,t]{Code Example}
+    \begin{minted}[bgcolor=codebg, linenos, fontsize=\tiny]{python}
 num = 0
 while True:
   sand = (500, 0)
@@ -321,7 +426,10 @@ while True:
 
 \section{Live Demo}
 
-\begin{frame}{Live Demo}
+\begin{frame}
+    \centering
+    \Huge
+    \textbf{Live Demo}
 \end{frame}
 
 \section{Key Takeaways \& Outlook}
@@ -333,6 +441,30 @@ while True:
         \only{\item<3-> adjust grid to be optimized for memory or computational performance}
         \only{\item<4-> render falling sand}
     \end{itemize}
+    \only<1>{
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.3\textwidth]{Images/AoC22_14_00_grid.png}
+        \end{figure}
+    }
+    \only<2>{
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.3\textwidth]{Images/AoC22_14_solution_part_1.png}
+        \end{figure}
+    }
+    \only<3>{
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.5\textwidth]{Images/AoC22_14_high_level.png}
+        \end{figure}
+    }
+    \only<4>{
+        \begin{figure}[H]
+            \centering
+            \includesvg[width=0.3\textwidth]{Images/AoC22_14_26.svg}
+        \end{figure}
+    }
 \end{frame}
 
 \end{document}

@@ -1,0 +1,103 @@
+%% Creator: Inkscape 1.2.2 (b0a8486541, 2022-12-01), www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'AoC22_14_00_grid_svg-tex.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{1950.75bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.92272203)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{AoC22_14_00_grid_svg-tex.pdf}}%
+    \put(0.03825452,0.10784314){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}9\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{AoC22_14_00_grid_svg-tex.pdf}}%
+    \put(0.03825452,0.03094963){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}10\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{AoC22_14_00_grid_svg-tex.pdf}}%
+    \put(0.03825452,0.18473664){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}8\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{AoC22_14_00_grid_svg-tex.pdf}}%
+    \put(0.03825452,0.26163014){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}7\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{AoC22_14_00_grid_svg-tex.pdf}}%
+    \put(0.03825452,0.33852364){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}6\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{AoC22_14_00_grid_svg-tex.pdf}}%
+    \put(0.03825452,0.41541715){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}5\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{AoC22_14_00_grid_svg-tex.pdf}}%
+    \put(0.03825452,0.49231065){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}4\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=8]{AoC22_14_00_grid_svg-tex.pdf}}%
+    \put(0.03825452,0.56920415){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}3\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=9]{AoC22_14_00_grid_svg-tex.pdf}}%
+    \put(0.03825452,0.64609765){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}2\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=10]{AoC22_14_00_grid_svg-tex.pdf}}%
+    \put(0.03825452,0.72299116){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}1\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=11]{AoC22_14_00_grid_svg-tex.pdf}}%
+    \put(0.03825452,0.79988466){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}0\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=12]{AoC22_14_00_grid_svg-tex.pdf}}%
+    \put(0.11514802,0.87677816){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}493\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=13]{AoC22_14_00_grid_svg-tex.pdf}}%
+    \put(0.19204152,0.87677816){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}494\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=14]{AoC22_14_00_grid_svg-tex.pdf}}%
+    \put(0.65340254,0.87677816){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}500\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=15]{AoC22_14_00_grid_svg-tex.pdf}}%
+    \put(0.73029604,0.87677816){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}501\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=16]{AoC22_14_00_grid_svg-tex.pdf}}%
+    \put(0.80718954,0.87677816){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}502\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=17]{AoC22_14_00_grid_svg-tex.pdf}}%
+    \put(0.88408304,0.87677816){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}503\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=18]{AoC22_14_00_grid_svg-tex.pdf}}%
+    \put(0.96097655,0.87677816){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}504\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=19]{AoC22_14_00_grid_svg-tex.pdf}}%
+    \put(0.57650903,0.87677816){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}499\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=20]{AoC22_14_00_grid_svg-tex.pdf}}%
+    \put(0.49961553,0.87677816){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}498\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=21]{AoC22_14_00_grid_svg-tex.pdf}}%
+    \put(0.42272203,0.87677816){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}497\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=22]{AoC22_14_00_grid_svg-tex.pdf}}%
+    \put(0.34582853,0.87677816){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}496\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=23]{AoC22_14_00_grid_svg-tex.pdf}}%
+    \put(0.26893502,0.87677816){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}495\end{tabular}}}}%
+  \end{picture}%
+\endgroup%

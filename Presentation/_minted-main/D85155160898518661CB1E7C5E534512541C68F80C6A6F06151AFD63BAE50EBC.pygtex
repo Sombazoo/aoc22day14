@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGZbs{}\PYG{n}{hl}\PYG{p}{\PYGZob{}}\PYG{n}{Coordinate} \PYG{o}{=} \PYG{n+nb}{tuple}\PYG{p}{[}\PYG{n+nb}{int}\PYG{p}{,} \PYG{n+nb}{int}\PYG{p}{]\PYGZcb{}}
+\PYGZbs{}\PYG{n}{hl}\PYG{p}{\PYGZob{}}\PYG{n}{Material} \PYG{o}{=} \PYG{n}{Enum}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Material\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}air rock source solid\PYGZus{}sand\PYGZsq{}}\PYG{p}{)\PYGZcb{}}
+\PYGZbs{}\PYG{n}{hl}\PYG{p}{\PYGZob{}}\PYG{n}{Object} \PYG{o}{=} \PYG{n+nb}{tuple}\PYG{p}{[}\PYG{n}{Material}\PYG{p}{,} \PYG{n}{Coordinate}\PYG{p}{]\PYGZcb{}}
+\end{Verbatim}

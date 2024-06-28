@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{esc}{\hl{Coordinate = tuple[int, int]}}
+\PYGZbs{}\PYG{n}{hl}\PYG{p}{\PYGZob{}}\PYG{n}{Material} \PYG{o}{=} \PYG{n}{Enum}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Material}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{air rock source solid\PYGZus{}sand}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}\PYG{p}{\PYGZcb{}}
+\PYGZbs{}\PYG{n}{hl}\PYG{p}{\PYGZob{}}\PYG{n}{Object} \PYG{o}{=} \PYG{n+nb}{tuple}\PYG{p}{[}\PYG{n}{Material}\PYG{p}{,} \PYG{n}{Coordinate}\PYG{p}{]}\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

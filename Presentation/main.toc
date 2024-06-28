@@ -5,5 +5,5 @@
 \beamer@sectionintoc {5}{Output Details}{34}{0}{5}
 \beamer@sectionintoc {6}{Solution Approach}{35}{0}{6}
 \beamer@sectionintoc {7}{Code Example}{36}{0}{7}
-\beamer@sectionintoc {8}{Live Demo}{37}{0}{8}
-\beamer@sectionintoc {9}{Key Takeaways \& Outlook}{38}{0}{9}
+\beamer@sectionintoc {8}{Live Demo}{44}{0}{8}
+\beamer@sectionintoc {9}{Key Takeaways \& Outlook}{45}{0}{9}
