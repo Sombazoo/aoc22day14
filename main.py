@@ -30,16 +30,16 @@ def main():
     engine2 = Engine(grid2, args.time, args.verbose)
 
     # todo solve part 1
-    part1 = engine1.spawn()
     if args.interrupt:
         input("Press Enter to start part 1...")
+    part1 = engine1.spawn()
     print(f"Part 1: {part1}")
 
     # todo solve part 2
-    part2 = engine2.spawn(part2=True)
     if args.interrupt:
         print("==========================================")
         input("Press Enter to start part 2...")
+    part2 = engine2.spawn(part2=True)
     print(f"Part 2: {part2}")
 
 
